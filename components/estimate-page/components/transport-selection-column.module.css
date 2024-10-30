@@ -1,0 +1,67 @@
+.topSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.sectionColWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.sectionCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 0rem;
+}
+
+.bagde {
+  background-color: var(--theme-secondary);
+  color: var(--secondary-text);
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.priceDescription {
+  font-size: 12px;
+  color: var(--tertiary-text);
+  margin-bottom: 0rem;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.imageWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42%;
+  height: 100%;
+}
+
+.image {
+  height: 120px;
+  width: 100%;
+  object-fit: cover;
+}

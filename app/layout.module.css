@@ -1,0 +1,29 @@
+.wrapper {
+  background-color: var(--default-background);
+  min-height: 100vh;
+}
+
+.main {
+  background-color: white;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  transition: transform 0.1s ease; /* Adjust this duration for scaling */
+}
+
+.content {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-bottom: 150px;
+}
+
+.footerContent {
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}

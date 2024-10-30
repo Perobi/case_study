@@ -1,0 +1,118 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+}
+
+.rowGap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 4rem;
+}
+
+.themeTextRotation {
+  font-size: 66px;
+  font-weight: 600;
+  display: inline-block; /* Ensure it's treated as a block element */
+
+  color: var(--theme-primary);
+}
+
+.text {
+  font-size: 66px;
+  font-weight: 600;
+  color: var(--tertiary-text);
+}
+
+.buttonPadding {
+  padding: 15px 20px !important;
+}
+
+.listCol {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.listTitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--primary-text);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.listItem {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--tertiary-text);
+}
+
+.listItem:hover {
+  color: var(--theme-primary);
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: var(--theme-primary);
+}
+
+/* bottom Section */
+
+.rowGap2 {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+}
+
+.badgeWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.star {
+  color: var(--theme-primary);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--theme-tertiary);
+  border: 0;
+  background-color: transparent;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.2s ease-out;
+}
+
+.badge:hover {
+  color: var(--theme-primary);
+  background-color: var(--theme-tertiary);
+}
+
+.themeColor {
+  color: var(--theme-primary);
+}

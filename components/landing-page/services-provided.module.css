@@ -1,0 +1,161 @@
+.pageSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.subTitleSection {
+  font-size: 55px;
+  font-weight: 600;
+  color: var(--primary-text);
+}
+
+.servicesProvided {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.service {
+  border-radius: 30px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.imgWrapper {
+  height: 45px;
+  width: 45px;
+  position: relative;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: var(--theme-secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.subTitleBadge {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* colorVariants */
+
+.pink {
+  background-color: var(--pink-secondary);
+  border: 1px solid var(--pink-primary);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.pink:hover {
+  background-color: var(--pink-tertiary);
+  color: var(--pink-primary);
+  scale: 1.02;
+}
+
+.pink:active {
+  scale: 0.98;
+}
+
+.green {
+  background-color: var(--green-secondary);
+  border: 1px solid var(--green-primary);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.green:hover {
+  background-color: var(--green-tertiary);
+  color: var(--green-primary);
+  scale: 1.02;
+}
+
+.green:active {
+  scale: 0.98;
+}
+
+.blue {
+  background-color: var(--blue-secondary);
+  border: 1px solid var(--blue-primary);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.blue:hover {
+  background-color: var(--blue-tertiary);
+  color: var(--blue-primary);
+  scale: 1.02;
+}
+
+.blue:active {
+  scale: 0.98;
+}
+
+.purple {
+  background-color: var(--purple-secondary);
+  border: 1px solid var(--purple-primary);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.purple:hover {
+  background-color: var(--purple-tertiary);
+  color: var(--purple-primary);
+  scale: 1.02;
+}
+
+.purple:active {
+  scale: 0.98;
+}
+
+.yellow {
+  background-color: var(--yellow-secondary);
+  border: 1px solid var(--yellow-primary);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.yellow:hover {
+  background-color: var(--yellow-tertiary);
+  color: var(--yellow-primary);
+  scale: 1.02;
+}
+
+.yellow:active {
+  scale: 0.98;
+}
+
+/* Badges */
+
+.pinkBadge {
+  background-color: var(--pink-primary);
+  color: var(--pink-tertiary);
+}
+
+.greenBadge {
+  background-color: var(--green-primary);
+  color: var(--green-tertiary);
+}
+
+.blueBadge {
+  background-color: var(--blue-primary);
+  color: var(--blue-tertiary);
+}
+
+.purpleBadge {
+  background-color: var(--purple-primary);
+  color: var(--purple-tertiary);
+}
+.yellowBadge {
+  background-color: var(--yellow-primary);
+  color: var(--yellow-tertiary);
+}

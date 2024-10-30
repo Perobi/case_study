@@ -1,0 +1,18 @@
+.searchBarWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 5px;
+  border: 1px solid var(--theme-primary);
+  border-radius: 30px;
+  background-color: white;
+  gap: 1rem;
+  width: 100%;
+}
+
+.separator {
+  width: 1px;
+  height: 35px;
+  background-color: rgba(149, 151, 157, 0.15);
+}

@@ -1,0 +1,84 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+
+.navigationInner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  width: 100%;
+  gap: 30px;
+}
+.logoWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 30px;
+}
+
+.text {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--secondary-text);
+}
+
+.themeDot {
+  color: var(--theme-primary);
+  font-size: 30px;
+}
+
+.slogan {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--tertiary-text);
+  white-space: nowrap;
+}
+
+.navList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.navLink {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary-text);
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.link:hover {
+  color: var(--theme-primary);
+}

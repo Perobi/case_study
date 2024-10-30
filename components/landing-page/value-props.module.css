@@ -1,0 +1,236 @@
+.pageSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.subTitleSection {
+  font-size: 55px;
+  font-weight: 600;
+  color: var(--primary-text);
+}
+
+.sections {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.gap {
+  gap: 1rem;
+}
+
+.section {
+  width: calc(50% - 1rem);
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  padding: 1.5rem;
+}
+.pink {
+  background-color: var(--pink-secondary);
+  border: 1px solid var(--pink-primary);
+}
+
+.green {
+  background-color: var(--green-secondary);
+  border: 1px solid var(--green-primary);
+}
+
+.blue {
+  background-color: var(--blue-secondary);
+  border: 1px solid var(--blue-primary);
+  justify-content: center;
+}
+
+.purple {
+  background-color: var(--purple-secondary);
+  border: 1px solid var(--purple-primary);
+  padding-bottom: 0;
+}
+
+.sectionFlexWrap {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sectionFlexWrapGap5 {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.transporterWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: calc(50% - 0.5rem);
+}
+
+.absolute {
+  position: absolute;
+  top: 1rem;
+  /* horizontal center */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.smallBadge {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 30px;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+.titleBadge {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  padding: 7px 15px;
+  width: fit-content;
+}
+
+.badgeTitle {
+  font-size: 28px;
+}
+
+.pinkBadge {
+  background-color: var(--pink-primary);
+  color: var(--pink-tertiary);
+}
+
+.greenBadge {
+  background-color: var(--green-primary);
+  color: var(--green-tertiary);
+}
+
+.blueBadge {
+  background-color: var(--blue-primary);
+  color: var(--blue-tertiary);
+}
+
+.purpleBadge {
+  background-color: var(--purple-primary);
+  color: var(--purple-tertiary);
+}
+
+.img {
+  width: 100%;
+}
+
+.sectionDateTimePicker {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  justify-content: space-between;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dateTitle {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--secondary-text);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.datePicker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+  border: 1px solid #dcdee2;
+  border-radius: 5px;
+  padding: 15px 10px;
+  color: var(--primary-text);
+  transition: all 0.2s ease-out;
+}
+
+.datePicker.active {
+  border: 1px solid var(--theme-tertiary);
+  background-color: var(--theme-tertiary);
+  color: var(--theme-primary);
+}
+
+.datePicker:hover {
+  cursor: pointer;
+  background-color: var(--theme-secondary);
+  color: var(--theme-tertiary);
+  border: 1px solid var(--theme-primary);
+}
+
+.timePicker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: calc(50% - 0.5rem);
+  align-items: center;
+  border: 1px solid #dcdee2;
+  border-radius: 15px;
+  padding: 7px 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--primary-text);
+  transition: all 0.2s ease-out;
+}
+
+.timePicker.active {
+  border: 1px solid var(--theme-tertiary);
+  background-color: var(--theme-tertiary);
+  color: var(--theme-primary);
+}
+.placeholderDash {
+  background-color: #dcdee294;
+  width: 100%;
+  height: 5px;
+  border-radius: 1px;
+}
+
+/* Change the background color when .active is present on the parent */
+.active .placeholderDash {
+  background-color: var(--theme-primary);
+}
+
+.timePicker:hover {
+  cursor: pointer;
+  background-color: var(--theme-secondary);
+  color: var(--theme-tertiary);
+  border: 1px solid var(--theme-primary);
+}
+
+.date {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.icon {
+  height: 29.5px;
+  width: 29.5px;
+  color: var(--pink-primary);
+}
