@@ -6,10 +6,10 @@
   text-decoration: none;
   cursor: pointer;
   background-color: var(--theme-primary);
+  color: var(--theme-tertiary);
   font-weight: 500;
   font-family: "Averta";
   font-size: 16px;
-  color: white;
   white-space: nowrap;
   transition: all 0.3s ease-out;
 }

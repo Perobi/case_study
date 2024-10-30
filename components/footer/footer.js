@@ -9,55 +9,27 @@ import { AnimatePresence, motion } from "framer-motion";
 export default function Footer() {
   const links = [
     {
-      title: "Moverr",
+      title: "Varm",
       links: [
         {
-          title: "Mein Account",
-          href: "/account",
+          title: "Einblasdämmung",
+          href: "/einblasdaemmung",
         },
         {
-          title: "API Integration",
-          href: "/api",
+          title: "Materialien",
+          href: "/materialien",
         },
         {
-          title: "Preise vergleichen",
-          href: "/preise-vergleichen",
+          title: "Über uns",
+          href: "/ueber-uns",
         },
         {
-          title: "Fahrer werden",
-          href: "/fahrer-werden",
+          title: "Freunde empfehlen",
+          href: "/freunde-empfehlen",
         },
       ],
     },
-    {
-      title: "Dienstleistungen",
-      links: [
-        {
-          title: "Umzüge",
-          href: "/umzug",
-        },
-        {
-          title: "Möbeltransport",
-          href: "/moebeltransport",
-        },
-        {
-          title: "Kleinanzeigen Lieferung",
-          href: "/kleinanzeigen-lieferung",
-        },
-        {
-          title: "Ikea Möbeltaxi",
-          href: "/ikea-moebeltaxi",
-        },
-        {
-          title: "Sperrmüllentsorgung",
-          href: "/sperrmuellentsorgung",
-        },
-        {
-          title: "Spendenabhohlung",
-          href: "/spendenabhohlung",
-        },
-      ],
-    },
+
     {
       title: "Support",
       links: [
@@ -85,18 +57,12 @@ export default function Footer() {
   const [currentVariantIndex, setCurrentVariantIndex] = useState(0);
 
   const textVariants = [
-    "Umzug?",
-    "Möbeltransport?",
-    "Kleinanzeigen Lieferung?",
-    "Ikea Möbeltaxi?",
-    "Haushaltsauflösung?",
-    "Transporter Service?",
-    "Spendenabholung?",
-    "Sperrmüllabholung?",
-    "Flohmarktlieferung?",
-    "Firmenumzüge?",
-    "Elektrogeräte-Transport?",
-    "Messe- und Eventlogistik?",
+    "Einblasdämmung?",
+    "Heizkosten sparen?",
+    "Schallschutz?",
+    "Komfort?",
+    "Wertsteigerung?",
+    "Heizkosten sparen?",
   ];
 
   useEffect(() => {
@@ -128,7 +94,7 @@ export default function Footer() {
             </AnimatePresence>
             <h3 className={classes.text}>Kein Problem</h3>
           </section>
-          <Button className={classes.buttonPadding}>Jetzt Buchen</Button>
+          <Button className={classes.buttonPadding}>Angebot erhalten</Button>
         </section>
 
         <section className={classes.rowGap}>
@@ -150,16 +116,9 @@ export default function Footer() {
         <section className={classes.row}>
           <section className={classes.rowGap2}>
             <section className={classes.badgeWrapper}>
-              <FaHeart className={classes.star} />
-              <Link href="/">
-                <button className={classes.badge}>Preise checken</button>
-              </Link>
-            </section>
-            <section className={classes.badgeWrapper}>
-              <FaTruck className={classes.star} />
-              <Link href="/">
-                <button className={classes.badge}>Fahrer werden</button>
-              </Link>
+              <span className={classes.badge}>
+                Made with <FaHeart className={classes.star} /> in Berlin
+              </span>
             </section>
           </section>
           <section className={classes.rowGap2}>
@@ -170,7 +129,7 @@ export default function Footer() {
               Nutzungsbedingungen
             </Link>
             <span className={classes.listItem}>
-              <span className={classes.themeColor}>©</span> Moverr 2024
+              <span className={classes.themeColor}>©</span> Varm 2024
             </span>
           </section>
         </section>

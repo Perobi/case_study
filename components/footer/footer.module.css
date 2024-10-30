@@ -101,6 +101,7 @@
   font-weight: 400;
   color: var(--theme-tertiary);
   border: 0;
+  gap: 0.5ch;
   background-color: transparent;
   padding: 0.5rem 0.75rem;
   cursor: pointer;
