@@ -48,7 +48,6 @@
 .purple {
   background-color: var(--purple-secondary);
   border: 1px solid var(--purple-primary);
-  padding-bottom: 0;
 }
 
 .sectionFlexWrap {
@@ -92,8 +91,6 @@
 }
 
 .titleBadge {
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 30px;
   padding: 7px 15px;
   width: fit-content;
@@ -125,6 +122,21 @@
 
 .img {
   width: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+  height: 270px;
+}
+
+.img2 {
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.sectionAnsprechspartner {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
 }
 
 .sectionDateTimePicker {

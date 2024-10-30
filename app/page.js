@@ -9,8 +9,8 @@ export default function Home() {
     <section className={classes.pageWrapper}>
       <Hero />
       <ValueProps />
-      <ServicesProvided />
-      <EstimateCTA />
+      {/* <ServicesProvided />
+      <EstimateCTA /> */}
     </section>
   );
 }
