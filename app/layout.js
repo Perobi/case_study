@@ -3,8 +3,10 @@ import "./globals.css";
 import classes from "./layout.module.css";
 import Footer from "@/components/footer/footer";
 import ScaleOnFooterVisible from "@/components/UI-components/layout/ScaleOnFooterVisible";
+import { AlertProvider } from "@/context/alert-context";
+import Alert from "@/components/UI-components/alert/alert";
 
-import { AngebotProvider } from "./context/angebot-context";
+// import { AngebotProvider } from "./context/angebot-context";
 
 export const metadata = {
   title: "VARM - Bequem & schnell zur Wärmedämmung!",
@@ -15,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <AngebotProvider>
+        <AlertProvider>
           <section className={classes.wrapper}>
             <section className={classes.main} id="main">
               <NavigationBar />
@@ -25,14 +27,14 @@ export default function RootLayout({ children }) {
               <Footer />
             </section>
           </section>
+          <Alert />
 
           {/* Now apply the ScaleOnFooterVisible component */}
           <ScaleOnFooterVisible
             contentSelector="#main" // Target the main section
             footerSelector="#footer" // Footer as the trigger
           />
-          {/* Theme changer */}
-        </AngebotProvider>
+        </AlertProvider>
       </body>
     </html>
   );

@@ -1,0 +1,143 @@
+.alert {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  height: fit-content;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  border-radius: 8px;
+
+  padding: 10px;
+  z-index: 500;
+  background-color: var(--green-primary);
+
+  color: var(--green-tertiary);
+  width: fit-content;
+  height: fit-content;
+}
+.fixed {
+  position: fixed;
+  bottom: 0;
+  z-index: 50000;
+
+  width: 100%;
+}
+.alertDanger {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  height: fit-content;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  border-radius: 8px;
+
+  padding: 10px;
+  z-index: 100000;
+
+  background-color: var(--purple-tertiary);
+  color: var(--purple-primary);
+
+  width: fit-content;
+  height: fit-content;
+}
+
+.msg {
+  font-size: 18px;
+  margin-right: 1rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0rem !important;
+}
+
+.progressBar {
+  background-color: var(--purple-primary);
+  opacity: 0.4;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.progress {
+  border-bottom-left-radius: 8px;
+  z-index: 100;
+  width: 100%;
+  border-bottom-right-radius: 8px;
+  height: 8px;
+  background-color: var(--purple-secondary);
+
+  animation: roundtime 7s 1;
+  transform-origin: left center;
+}
+
+.progressBarSuccess {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--green-tertiary);
+
+  opacity: 0.2;
+  z-index: 100;
+  width: 100%;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.progressSuccess {
+  border-bottom-left-radius: 8px;
+  z-index: 100;
+  width: 100%;
+  border-bottom-right-radius: 8px;
+  height: 8px;
+  background-color: var(--green-secondary);
+
+  animation: roundtime 7s 1;
+  transform-origin: left center;
+}
+
+@keyframes roundtime {
+  to {
+    /* More performant than animating `width` */
+    transform: scaleX(0);
+  }
+}
+
+.icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.icon:hover {
+  cursor: pointer;
+}
+
+.alertNav {
+  margin: auto;
+  margin-bottom: 20px;
+  width: 60%;
+}
+
+@media (max-width: 600px) {
+  .alert {
+    bottom: 120px;
+    width: fit-content;
+  }
+
+  .alertDanger {
+    bottom: 120px;
+    width: fit-content;
+  }
+
+  .msg {
+    font-size: 14px;
+  }
+}
