@@ -32,9 +32,7 @@ export default function NavigationBar() {
             </li>
           </ul>
 
-          <ul className={classes.navLinks}>
-            <Button>Angebot erhalten</Button>
-          </ul>
+          <Button>Angebot erhalten</Button>
         </nav>
       </div>
     </header>

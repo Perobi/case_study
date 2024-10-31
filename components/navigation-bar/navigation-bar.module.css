@@ -82,3 +82,27 @@
 .link:hover {
   color: var(--theme-primary);
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    height: 80px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .slogan {
+    display: none;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .navigationInner {
+    justify-content: space-between;
+  }
+
+  .navList {
+    width: fit-content;
+  }
+}

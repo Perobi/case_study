@@ -117,3 +117,60 @@
 .themeColor {
   color: var(--theme-primary);
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    gap: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .rowGap {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .themeTextRotation {
+    font-size: 35px;
+  }
+
+  .text {
+    font-size: 35px;
+  }
+
+  .listTitle {
+    font-size: 18px;
+  }
+
+  .listItem {
+    font-size: 14px;
+  }
+
+  .buttonPadding {
+    padding: 10px 15px !important;
+  }
+
+  .list {
+    gap: 5px;
+  }
+
+  .rowGap2 {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .badge {
+    font-size: 14px;
+    padding: 0.25rem 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -37,7 +37,12 @@ export default function UploadInput({
             <span className={classes.uploadText}>Hier reinziehen oder</span>
           )}
         </section>
-        <button type="button" className={classes.uploadButton}>
+        <button
+          type="button"
+          className={`${classes.uploadButton} ${
+            files.length > 0 ? classes.mobileHide : ""
+          }`}
+        >
           Hochladen
         </button>
         <input
