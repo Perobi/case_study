@@ -7,11 +7,17 @@ const TABLE_NAME = "Table 1";
 
 const base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(AIRTABLE_BASE);
 
-// Function to upload a file to File.io and get the public URL
+// Function to upload a file to File.io and get the public URL with a delay
 const uploadFileToTemporaryService = async (file) => {
   const url = "https://file.io/";
   const formData = new FormData();
   formData.append("file", file);
+
+  // Introduce a delay to avoid hitting the rate limit
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  // Wait for a short period before uploading
+  await delay(500); // Adjust the delay time as necessary (500 ms as an example)
 
   const response = await fetch(url, {
     method: "POST",
@@ -30,9 +36,26 @@ export async function POST(request) {
   try {
     const formData = await request.formData();
 
+    // Check for required fields
+    const userEmail = formData.get("userEmail");
+    const userFirstName = formData.get("userFirstName");
+    const userLastName = formData.get("userLastName");
+    const userPhone = formData.get("userPhone");
+
+    if (!userEmail || !userFirstName || !userLastName || !userPhone) {
+      return NextResponse.json(
+        {
+          success: false,
+          error:
+            "Bitte stellen Sie sicher, dass alle erforderlichen Felder ausgefüllt sind.",
+        },
+        { status: 400 } // Bad Request status
+      );
+    }
+
     // Get separate files for objektfotos and unterlagen
-    const objektfotos = formData.getAll("objektFotos"); // Adjusted key name to match client-side
-    const unterlagen = formData.getAll("gebaudeUnterlagen"); // Adjusted key name to match client-side
+    const objektfotos = formData.getAll("objektFotos");
+    const unterlagen = formData.getAll("gebaudeUnterlagen");
 
     // Upload all objektfotos and unterlagen files
     const uploadedObjektfotos = await Promise.all(
@@ -47,14 +70,14 @@ export async function POST(request) {
     const createdRecord = await base(TABLE_NAME).create({
       objektfotos_attachments: uploadedObjektfotos.map((file) => ({
         url: file.url,
-      })), // Attach the uploaded objektfotos URLs
+      })),
       unterlagen_attachments: uploadedUnterlagen.map((file) => ({
         url: file.url,
-      })), // Attach the uploaded unterlagen URLs
-      user_email: formData.get("userEmail"),
-      user_first_name: formData.get("userFirstName"),
-      user_last_name: formData.get("userLastName"),
-      user_phone: formData.get("userPhone"),
+      })),
+      user_email: userEmail,
+      user_first_name: userFirstName,
+      user_last_name: userLastName,
+      user_phone: userPhone,
       user_address: formData.get("userAddress"),
     });
 

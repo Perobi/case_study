@@ -76,9 +76,9 @@ export default function UploadSection() {
     // Check existing count of files
     const existingCount = object?.length;
 
-    if (existingCount >= 5) {
+    if (existingCount >= 8) {
       SET_ALERT({
-        msg: "Maximal 5 Bilder pro Abschnitt sind erlaubt.",
+        msg: "Maximal 8 Bilder pro Abschnitt sind erlaubt.",
         type: "danger",
       });
       return;
@@ -96,9 +96,9 @@ export default function UploadSection() {
         continue; // Skip to next file
       }
 
-      if (newImages.length + existingCount >= 5) {
+      if (newImages.length + existingCount >= 8) {
         SET_ALERT({
-          msg: "Maximal 5 Bilder pro Abschnitt sind erlaubt.",
+          msg: "Maximal 8 Bilder pro Abschnitt sind erlaubt.",
           type: "danger",
         });
         break; // Stop adding files if limit is reached
@@ -114,7 +114,7 @@ export default function UploadSection() {
     if (!errors) {
       setter((prevImages) => {
         const updatedImages = [...prevImages, ...newImages];
-        return updatedImages.slice(0, 5); // Ensure only the first 5 are kept
+        return updatedImages.slice(0, 8); // Ensure only the first 5 are kept
       });
     } else {
       setFileErrors(true);
