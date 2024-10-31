@@ -55,7 +55,7 @@ export default function UploadSection() {
     console.log("submitting");
     SET_ALERT({
       msg: "Ihre Dokumente wurden erfolgreich eingereicht!",
-      type: "danger",
+      type: "success",
     });
   };
 
