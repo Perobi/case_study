@@ -94,7 +94,9 @@ export default function Footer() {
             </AnimatePresence>
             <h3 className={classes.text}>Kein Problem</h3>
           </section>
-          <Button className={classes.buttonPadding}>Angebot erhalten</Button>
+          <Button location={"/"} className={classes.buttonPadding}>
+            Angebot erhalten
+          </Button>
         </section>
 
         <section className={classes.rowGap}>

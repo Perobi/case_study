@@ -32,7 +32,7 @@ export default function NavigationBar() {
             </li>
           </ul>
 
-          <Button>Angebot erhalten</Button>
+          <Button location={"/"}>Angebot erhalten</Button>
         </nav>
       </div>
     </header>
