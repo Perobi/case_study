@@ -102,10 +102,6 @@ export default function QuestionsSection() {
             </section>
           </li>
         </ul>
-
-        <section className={classes.goBackSection}>
-          <Button location={"/"}>Zurück zu Varm</Button>
-        </section>
       </section>
     </>
   );

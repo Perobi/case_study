@@ -1,0 +1,28 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  max-width: 50%;
+  text-align: center;
+  color: var(--primary-text);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px;
+    max-width: 100%;
+  }
+  .buttonWrapper {
+    width: 100%;
+  }
+  .button {
+    width: 100%;
+  }
+}
