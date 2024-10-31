@@ -11,6 +11,10 @@
   cursor: pointer;
 }
 
+.error {
+  border: 2px dashed var(--pink-primary);
+}
+
 .spanAll {
   grid-column: span 4;
   grid-row: span 2;

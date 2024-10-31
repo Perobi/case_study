@@ -10,13 +10,16 @@ export default function UploadInput({
   inputRef,
   setFiles,
   files,
+  fileErrors,
 }) {
   return (
     <>
       <section
         className={`${classes.inputSection} ${
           isDragging ? classes.dragging : ""
-        } ${files.length === 0 ? classes.spanAll : classes.span1}`}
+        } ${files.length === 0 ? classes.spanAll : classes.span1} ${
+          fileErrors ? classes.error : ""
+        }`}
         onClick={() => handleUploadClick(inputRef)}
         onDragOver={(e) => {
           e.preventDefault();
@@ -24,7 +27,7 @@ export default function UploadInput({
         }}
         onDragLeave={() => setIsDragging(false)}
         onDrop={(e) => {
-          handleDrop(e, setFiles);
+          handleDrop(e, setFiles, files);
           setIsDragging(false);
         }}
       >
@@ -43,7 +46,7 @@ export default function UploadInput({
           className={classes.input}
           accept="image/*"
           ref={inputRef}
-          onChange={(event) => handleFileChange(event, setFiles)}
+          onChange={(event) => handleFileChange(event, setFiles, files)}
         />
       </section>
     </>
