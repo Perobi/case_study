@@ -8,6 +8,7 @@ import UploadInput from "./components/upload-input";
 import { useAlertContext } from "@/context/alert-context";
 import FormDetails from "./components/form-details";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { useRouter } from "next/navigation";
 
 export default function UploadSection() {
   const objektInputRef = useRef(null);
@@ -20,6 +21,7 @@ export default function UploadSection() {
   const [loadingFetchDetails, setLoadingFetchDetails] = useState(true);
   const [userDetails, setUserDetails] = useState(null);
   const [fileErrors, setFileErrors] = useState(false);
+  const router = useRouter();
 
   const { SET_ALERT } = useAlertContext();
 
@@ -171,6 +173,7 @@ export default function UploadSection() {
           msg: "Ihre Dokumente wurden erfolgreich eingereicht!",
           type: "success",
         });
+        router.push("/success");
       } else {
         // Handle error message from the API response
         SET_ALERT({

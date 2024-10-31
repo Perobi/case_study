@@ -1,0 +1,204 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title {
+  font-size: 66px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--primary-text);
+}
+
+.profileImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.sections {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.gap {
+  gap: 1rem;
+}
+.topSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.smallBadge {
+  background-color: var(--purple-secondary);
+  border-radius: 30px;
+  font-size: 14px;
+  width: fit-content;
+  padding: 5px 10px;
+}
+
+.sectionAnsprechspartner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  gap: 1rem;
+}
+
+.section {
+  width: calc(50% - 1rem);
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  padding: 1.5rem;
+}
+
+.purple {
+  /* background-color: var(--purple-secondary); */
+  border: 1px solid var(--purple-primary);
+}
+.pink {
+  /* background-color: var(--pink-secondary); */
+  border: 1px solid var(--pink-primary);
+}
+
+.titleBadge {
+  border-radius: 30px;
+  padding: 7px 15px;
+  width: fit-content;
+}
+
+.badgeTitle {
+  font-size: 28px;
+}
+
+.purpleBadge {
+  background-color: var(--purple-primary);
+  color: var(--purple-tertiary);
+}
+
+.pinkBadge {
+  background-color: var(--pink-primary);
+  color: var(--pink-tertiary);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contactSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contactDetail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 16px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: var(--purple-primary);
+}
+
+.infoDetail {
+  color: var(--secondary-text);
+  font-weight: 400;
+}
+
+.sectionCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.valueProp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconWrapper {
+  background-color: var(--pink-secondary);
+  border-radius: 50%;
+  padding: 0.25rem;
+  color: var(--pink-primary);
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.valuePropSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  justify-content: center;
+}
+
+.valuePropTitle {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.valuePropDescription {
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--secondary-text);
+}
+
+.iconValue {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 40px;
+    text-align: left;
+  }
+
+  .valuePropTitle {
+    font-size: 16px;
+  }
+
+  .section {
+    width: 100%;
+  }
+
+  .badgeTitle {
+    font-size: 14px;
+  }
+
+  .profileImg {
+    width: 100px;
+    height: 100px;
+  }
+}

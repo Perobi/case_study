@@ -1,15 +1,21 @@
-import Link from "next/link";
+"use client";
 import classes from "./button.module.css";
+import { useRouter } from "next/navigation";
 
-export default function Button({ children, onClick, link, className }) {
+export default function Button({ children, location, className }) {
+  const router = useRouter();
+
+  const navigateHandler = (e) => {
+    e.preventDefault();
+    router.push(location);
+  };
+
   return (
-    // <Link href={link ? link : ""}>
     <button
       className={`${classes.buttonStyles} ${className}`}
-      onClick={onClick}
+      onClick={(e) => navigateHandler(e)}
     >
       {children}
     </button>
-    // </Link>
   );
 }
