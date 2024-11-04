@@ -6,108 +6,77 @@ export default function FormDetails({
   setUserDetails,
   loadingFetchDetails,
 }) {
+  const {
+    user_first_name,
+    user_last_name,
+    user_email,
+    user_phone,
+    user_address,
+  } = userDetails || {};
+
+  const handleInputChange = (field, value) => {
+    setUserDetails((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
   return (
-    <>
-      <section className={classes.formDetails}>
-        <section className={classes.topSection}>
-          <h3 className={classes.sectionTitle}>Persöhnliche Informationen</h3>
-        </section>
-        <section className={classes.row}>
-          <span className={classes.inputWrapper}>
-            <input
-              type="text"
-              className={classes.input}
-              placeholder="Vorname"
-              required
-              value={userDetails?.user_first_name}
-              onChange={(e) =>
-                setUserDetails((prev) => ({
-                  ...prev,
-                  user_first_name: e.target.value,
-                }))
-              }
-            />
-            {loadingFetchDetails && (
-              <AiOutlineLoading3Quarters className={classes.loadingIcon} />
-            )}
-          </span>
-
-          <span className={classes.inputWrapper}>
-            <input
-              type="text"
-              required
-              placeholder="Nachname"
-              className={classes.input}
-              value={userDetails?.user_last_name}
-              onChange={(e) =>
-                setUserDetails((prev) => ({
-                  ...prev,
-                  user_last_name: e.target.value,
-                }))
-              }
-            />
-            {loadingFetchDetails && (
-              <AiOutlineLoading3Quarters className={classes.loadingIcon} />
-            )}{" "}
-          </span>
-
-          <span className={classes.inputWrapper}>
-            <input
-              type="email"
-              placeholder="Email"
-              required
-              className={classes.input}
-              value={userDetails?.user_email}
-              onChange={(e) =>
-                setUserDetails((prev) => ({
-                  ...prev,
-                  user_email: e.target.value,
-                }))
-              }
-            />
-            {loadingFetchDetails && (
-              <AiOutlineLoading3Quarters className={classes.loadingIcon} />
-            )}
-          </span>
-
-          <span className={classes.inputWrapper}>
-            <input
-              type="text"
-              placeholder="Telefonnummer"
-              required
-              className={classes.input}
-              value={userDetails?.user_phone}
-              onChange={(e) =>
-                setUserDetails((prev) => ({
-                  ...prev,
-                  user_phone: e.target.value,
-                }))
-              }
-            />
-            {loadingFetchDetails && (
-              <AiOutlineLoading3Quarters className={classes.loadingIcon} />
-            )}
-          </span>
-
-          <span className={classes.inputWrapper}>
-            <input
-              type="text"
-              placeholder="Addresse (optional)"
-              className={classes.input}
-              value={userDetails?.user_address}
-              onChange={(e) =>
-                setUserDetails((prev) => ({
-                  ...prev,
-                  user_address: e.target.value,
-                }))
-              }
-            />
-            {loadingFetchDetails && (
-              <AiOutlineLoading3Quarters className={classes.loadingIcon} />
-            )}
-          </span>
-        </section>
+    <section className={classes.formDetails}>
+      <section className={classes.topSection}>
+        <h3 className={classes.sectionTitle}>Persöhnliche Informationen</h3>
       </section>
-    </>
+
+      <section className={classes.row}>
+        {[
+          {
+            label: "Vorname",
+            type: "text",
+            value: user_first_name,
+            field: "user_first_name",
+          },
+          {
+            label: "Nachname",
+            type: "text",
+            value: user_last_name,
+            field: "user_last_name",
+          },
+          {
+            label: "Email",
+            type: "email",
+            value: user_email,
+            field: "user_email",
+          },
+          {
+            label: "Telefonnummer",
+            type: "text",
+            value: user_phone,
+            field: "user_phone",
+          },
+          {
+            label: "Addresse (optional)",
+            type: "text",
+            value: user_address,
+            field: "user_address",
+          },
+        ].map(({ label, type, value, field }) => (
+          <span key={field} className={classes.inputWrapper}>
+            <input
+              type={type}
+              id={field}
+              className={classes.input}
+              placeholder={label}
+              required={field !== "user_address"}
+              value={value || ""}
+              onChange={(e) => handleInputChange(field, e.target.value)}
+            />
+          </span>
+        ))}
+
+        {loadingFetchDetails && (
+          <AiOutlineLoading3Quarters className={classes.loadingIcon} />
+        )}
+      </section>
+    </section>
   );
 }

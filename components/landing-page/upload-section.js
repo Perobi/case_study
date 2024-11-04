@@ -60,7 +60,6 @@ export default function UploadSection() {
   };
 
   const handleFileChange = (event, setter, object) => {
-    setFileErrors(false);
     const files = Array.from(event.target.files);
     addFiles(files, setter, object);
   };
@@ -73,7 +72,7 @@ export default function UploadSection() {
 
   const addFiles = (files, setter, object) => {
     const newImages = [];
-    let errors = false;
+    setFileErrors(false);
 
     // Check existing count of files
     const existingCount = object?.length;
@@ -94,7 +93,6 @@ export default function UploadSection() {
           msg: `Die Datei ${file.name} überschreitet die maximale Größe von 15MB.`,
           type: "danger",
         });
-        errors = true;
         continue; // Skip to next file
       }
 
@@ -113,13 +111,11 @@ export default function UploadSection() {
     }
 
     // Only update the state if there were no errors
-    if (!errors) {
+    if (newImages.length > 0) {
       setter((prevImages) => {
         const updatedImages = [...prevImages, ...newImages];
         return updatedImages.slice(0, 8); // Ensure only the first 5 are kept
       });
-    } else {
-      setFileErrors(true);
     }
   };
 

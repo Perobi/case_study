@@ -13,7 +13,7 @@ export default function Button({ children, location, className }) {
   return (
     <button
       className={`${classes.buttonStyles} ${className}`}
-      onClick={(e) => navigateHandler(e)}
+      onClick={location ? (e) => navigateHandler(e) : null}
     >
       {children}
     </button>
