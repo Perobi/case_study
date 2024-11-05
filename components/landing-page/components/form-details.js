@@ -1,3 +1,4 @@
+import AutoCompleteInput from "@/components/UI-components/inputs/autocomplete-input";
 import classes from "./form-details.module.css";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
@@ -59,22 +60,38 @@ export default function FormDetails({
             value: user_address,
             field: "user_address",
           },
-        ].map(({ label, type, value, field }) => (
-          <span key={field} className={classes.inputWrapper}>
-            <input
-              type={type}
-              id={field}
-              className={classes.input}
-              placeholder={label}
-              required={field !== "user_address"}
-              value={value || ""}
-              onChange={(e) => handleInputChange(field, e.target.value)}
-            />
-            {loadingFetchDetails && (
-              <AiOutlineLoading3Quarters className={classes.loadingIcon} />
-            )}
-          </span>
-        ))}
+        ].map(({ label, type, value, field }) =>
+          field === "user_address" ? (
+            <span
+              key={field}
+              className={`${classes.inputWrapper} ${classes.addressField} `}
+            >
+              <AutoCompleteInput
+                key={field}
+                value={value}
+                onChange={(newValue) => handleInputChange(field, newValue)}
+              />
+              {loadingFetchDetails && (
+                <AiOutlineLoading3Quarters className={classes.loadingIcon} />
+              )}
+            </span>
+          ) : (
+            <span key={field} className={`${classes.inputWrapper} `}>
+              <input
+                type={type}
+                id={field}
+                className={classes.input}
+                placeholder={label}
+                required
+                value={value || ""}
+                onChange={(e) => handleInputChange(field, e.target.value)}
+              />
+              {loadingFetchDetails && (
+                <AiOutlineLoading3Quarters className={classes.loadingIcon} />
+              )}
+            </span>
+          )
+        )}
       </section>
     </section>
   );

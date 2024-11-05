@@ -16,10 +16,9 @@
 
 .inputWrapper {
   position: relative;
-  width: calc(50% - 0.5rem);
+  width: calc(50% - 0.25rem);
   border: 1px solid var(--border-primary);
   border-radius: 15px;
-  overflow: hidden;
 }
 
 /* Use :focus-within on the wrapper to change the border when any child is focused */
@@ -33,6 +32,7 @@
   outline: none;
   border: none;
   padding: 1rem;
+  border-radius: 15px;
 }
 
 .input::placeholder {
@@ -82,6 +82,10 @@
 @media (max-width: 768px) {
   .sectionTitle {
     font-size: 20px;
+  }
+
+  .addressField {
+    width: 100%;
   }
 
   .formDetails {
