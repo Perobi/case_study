@@ -3,7 +3,7 @@ import Airtable from "airtable";
 
 const AIRTABLE_API_KEY = process.env.NEXT_PUBLIC_AIRTABLE_API_KEY;
 const AIRTABLE_BASE = process.env.NEXT_PUBLIC_AIRTABLE_BASE;
-const TABLE_NAME = "Table 1";
+const TABLE = process.env.NEXT_PUBLIC_AIRTABLE_LEAD_GENERATION_TABLE_ID;
 
 const base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(AIRTABLE_BASE);
 
@@ -72,7 +72,7 @@ export async function POST(request) {
     );
 
     // Prepare the data for Airtable with separate attachments for each column
-    const createdRecord = await base(TABLE_NAME).create({
+    const createdRecord = await base(TABLE).create({
       objektfotos_attachments: uploadedObjektfotos.map((file) => ({
         url: file.url,
       })),

@@ -9,6 +9,7 @@ import { useAlertContext } from "@/context/alert-context";
 import FormDetails from "./components/form-details";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function UploadSection() {
   const objektInputRef = useRef(null);
@@ -21,6 +22,7 @@ export default function UploadSection() {
   const [loadingFetchDetails, setLoadingFetchDetails] = useState(true);
   const [userDetails, setUserDetails] = useState(null);
   const [fileErrors, setFileErrors] = useState(false);
+  const [email, setEmail] = useState(null);
   const router = useRouter();
 
   const { SET_ALERT } = useAlertContext();
@@ -31,29 +33,36 @@ export default function UploadSection() {
         `/api/fetch-user-details?email=${encodeURIComponent(email)}`
       );
       const data = await response.json();
-
       if (data.success) {
         setUserDetails(data.userDetails[0]);
       } else {
         return;
       }
     } catch (error) {
-      SET_ALERT({
-        msg: `Error fetching user details: ${error.message}`,
-        type: "danger",
-      });
+      console.error(`Error fetching user details: ${error.message}`);
     }
     setLoadingFetchDetails(false);
   };
 
   useEffect(() => {
-    const email = new URLSearchParams(window.location.search).get("email");
+    if (typeof window !== "undefined") {
+      const emailParam = new URLSearchParams(window.location.search).get(
+        "email"
+      );
+      if (emailParam) {
+        setEmail(emailParam); // Set the email in state
+      } else {
+        setLoadingFetchDetails(false);
+      }
+    }
+  }, []); // Empty dependency array means it runs once on mount
+
+  // Fetch user details when `email` changes
+  useEffect(() => {
     if (email) {
       fetchUserDetails(email);
-    } else {
-      setLoadingFetchDetails(false);
     }
-  }, []);
+  }, [email]);
 
   const handleUploadClick = (ref) => {
     ref.current.click();
@@ -125,6 +134,10 @@ export default function UploadSection() {
 
   const submitHandler = async (event) => {
     event.preventDefault();
+    if (loadingSubmitting) {
+      SET_ALERT({ msg: "Bitte warten...", type: "danger" });
+      return;
+    }
     setLoadingSubmitting(true);
 
     const formData = new FormData();
@@ -216,7 +229,9 @@ export default function UploadSection() {
                         : classes.imageWrapper
                     }
                   >
-                    <img
+                    <Image
+                      width={285}
+                      height={285}
                       src={image.url}
                       alt={`preview-1-${index}`}
                       className={classes.image}
@@ -267,7 +282,9 @@ export default function UploadSection() {
                         : classes.imageWrapper
                     }
                   >
-                    <img
+                    <Image
+                      width={285}
+                      height={285}
                       src={image.url}
                       alt={`preview-2-${index}`}
                       className={classes.image}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import classes from "./navigation-bar.module.css";
 import logo from "@/public/assets/logo.png";
 import Button from "../UI-components/button/button";
+import Image from "next/image";
 
 export default function NavigationBar() {
   return (
@@ -9,7 +10,13 @@ export default function NavigationBar() {
       <div className={classes.navigationInner}>
         <section className={classes.logoWrapper}>
           <Link href="/">
-            <img src={logo.src} alt="Varm Logo" className={classes.logo} />
+            <Image
+              width={100}
+              height={30}
+              src={logo.src}
+              alt="Varm Logo"
+              className={classes.logo}
+            />
           </Link>
 
           <span className={classes.slogan}>
