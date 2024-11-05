@@ -1,16 +1,25 @@
 import Hero from "@/components/success-page/hero";
 import classes from "./page.module.css";
-import NextSteps from "@/components/success-page/next-steps";
-import QuestionsSection from "@/components/success-page/questions-section";
-import InTouchSection from "@/components/success-page/in-touch-section";
+import { Suspense, lazy } from "react";
+
+// Lazy load non-critical components
+const NextSteps = lazy(() => import("@/components/success-page/next-steps"));
+const QuestionsSection = lazy(() =>
+  import("@/components/success-page/questions-section")
+);
+const InTouchSection = lazy(() =>
+  import("@/components/success-page/in-touch-section")
+);
 
 export default function Success() {
   return (
     <section className={classes.pageWrapper}>
       <Hero />
-      <NextSteps />
-      <QuestionsSection />
-      <InTouchSection />
+      <Suspense fallback={<div>Loading sections...</div>}>
+        <NextSteps />
+        <QuestionsSection />
+        <InTouchSection />
+      </Suspense>
     </section>
   );
 }

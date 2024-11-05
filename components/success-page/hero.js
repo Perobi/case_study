@@ -11,9 +11,9 @@ export default function hero() {
         <h1 className={classes.title}>
           Vielen Dank für die Einreichung ihrer Dokumente
         </h1>
-        <p className={classes.sectionTitle}>
+        <h2 className={classes.sectionTitle}>
           Ihre Unterlagen sind bei uns angekommen. Was passiert jetzt?{" "}
-        </p>
+        </h2>
       </section>
     </section>
   );

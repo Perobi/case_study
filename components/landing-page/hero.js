@@ -15,12 +15,12 @@ export default function Hero() {
               <span className={classes.themeColor}>Einspritzdämmung</span> hoch
             </h1>
           </section>
-          <h3 className={classes.sectionTitle}>
+          <h2 className={classes.sectionTitle}>
             Bis zu <span className={classes.themeColor}>50%</span> Heizkosten
             sparen. In nur <span className={classes.themeColor}>30 Tagen</span>{" "}
             gedämmt. <span className={classes.themeColor}>20%</span> Förderung
             erhalten.
-          </h3>
+          </h2>
         </div>
       </section>
     </>

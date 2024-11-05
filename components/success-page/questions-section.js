@@ -6,6 +6,7 @@ import { IoMdTime } from "react-icons/io";
 
 import { FaPercent } from "react-icons/fa6";
 import Button from "../UI-components/button/button";
+import Image from "next/image";
 
 export default function QuestionsSection() {
   return (
@@ -26,7 +27,9 @@ export default function QuestionsSection() {
             </div>
             <section className={classes.sectionAnsprechspartner}>
               <section className={classes.topSection}>
-                <img
+                <Image
+                  width={150}
+                  height={150}
                   src={mauritz.src}
                   alt="mauritz"
                   className={classes.profileImg}

@@ -70,12 +70,11 @@ export default function FormDetails({
               value={value || ""}
               onChange={(e) => handleInputChange(field, e.target.value)}
             />
+            {loadingFetchDetails && (
+              <AiOutlineLoading3Quarters className={classes.loadingIcon} />
+            )}
           </span>
         ))}
-
-        {loadingFetchDetails && (
-          <AiOutlineLoading3Quarters className={classes.loadingIcon} />
-        )}
       </section>
     </section>
   );

@@ -1,18 +1,17 @@
 import classes from "./value-props.module.css";
 
 import mauritz from "@/public/assets/mauritz.png";
-
+import Image from "next/image";
 import basementCeiling from "@/public/assets/einspritztypes/basementCeiling.png";
 import facade from "@/public/assets/einspritztypes/facade.png";
 import roof from "@/public/assets/einspritztypes/roof.png";
 import topFloorCeiling from "@/public/assets/einspritztypes/topFloorCeiling.png";
-
 import varmWorker from "@/public/assets/varmWorker.png";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineMail } from "react-icons/md";
 
 export default function ValueProps() {
-  const transporterSection = [
+  const gebauedeSection = [
     {
       title: "Fassade",
       img: facade.src,
@@ -61,9 +60,11 @@ export default function ValueProps() {
             </div>
             <section className={classes.sectionAnsprechspartner}>
               <section className={classes.topSection}>
-                <img
+                <Image
+                  width={150}
+                  height={150}
                   src={mauritz.src}
-                  alt="mauritz"
+                  alt="mauritz koch einspritzdämmung"
                   className={classes.profileImg}
                 />
                 <section className={classes.details}>
@@ -97,9 +98,11 @@ export default function ValueProps() {
               </h3>
             </div>
             <section className={classes.sectionFlexWrap}>
-              <img
+              <Image
                 src={varmWorker.src}
-                alt="tracking"
+                width={550}
+                height={270}
+                alt="varm worker"
                 className={classes.img}
               />
             </section>
@@ -113,9 +116,11 @@ export default function ValueProps() {
               </h3>
             </div>
             <section className={classes.sectionFlexWrap}>
-              {transporterSection.map((section) => (
-                <div className={classes.buildingWrapper}>
-                  <img
+              {gebauedeSection.map((section, index) => (
+                <div className={classes.buildingWrapper} key={index}>
+                  <Image
+                    width={150}
+                    height={150}
                     src={section.img}
                     alt={section.title}
                     className={classes.img2}
