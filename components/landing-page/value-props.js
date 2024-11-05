@@ -130,8 +130,11 @@ export default function ValueProps() {
             className={`${classes.section} ${classes.blue} ${classes.gap}`}
             key={3}
           >
-            {badges.map((badge) => (
-              <div className={`${classes.titleBadge} ${classes.blueBadge}`}>
+            {badges.map((badge, index) => (
+              <div
+                className={`${classes.titleBadge} ${classes.blueBadge}`}
+                key={index}
+              >
                 <h3 className={classes.badgeTitle}>{badge}</h3>
               </div>
             ))}
