@@ -1,5 +1,5 @@
 "use client";
-
+import imageCompression from "browser-image-compression";
 import { useEffect, useRef, useState } from "react";
 import Button from "../UI-components/button/button";
 import classes from "./upload-section.module.css";
@@ -79,11 +79,10 @@ export default function UploadSection() {
     addFiles(files, setter, object);
   };
 
-  const addFiles = (files, setter, object) => {
+  const addFiles = async (files, setter, object) => {
     const newImages = [];
     setFileErrors(false);
 
-    // Check existing count of files
     const existingCount = object?.length;
 
     if (existingCount >= 8) {
@@ -94,15 +93,20 @@ export default function UploadSection() {
       return;
     }
 
-    // Check each file
+    // Compression of images
+    const options = {
+      maxSizeMB: 1,
+      maxWidthOrHeight: 800,
+      useWebWorker: true,
+    };
+
     for (const file of files) {
       if (file.size > 15 * 1024 * 1024) {
-        // 15MB in bytes
         SET_ALERT({
           msg: `Die Datei ${file.name} überschreitet die maximale Größe von 15MB.`,
           type: "danger",
         });
-        continue; // Skip to next file
+        continue;
       }
 
       if (newImages.length + existingCount >= 8) {
@@ -110,20 +114,28 @@ export default function UploadSection() {
           msg: "Maximal 8 Bilder pro Abschnitt sind erlaubt.",
           type: "danger",
         });
-        break; // Stop adding files if limit is reached
+        break;
       }
 
-      newImages.push({
-        url: URL.createObjectURL(file),
-        file: file,
-      });
+      try {
+        const compressedFile = await imageCompression(file, options);
+        const compressedImage = {
+          url: URL.createObjectURL(compressedFile),
+          file: compressedFile,
+        };
+        newImages.push(compressedImage);
+      } catch (error) {
+        SET_ALERT({
+          msg: `Fehler beim Komprimieren von ${file.name}.`,
+          type: "danger",
+        });
+      }
     }
 
-    // Only update the state if there were no errors
     if (newImages.length > 0) {
       setter((prevImages) => {
         const updatedImages = [...prevImages, ...newImages];
-        return updatedImages.slice(0, 8); // Ensure only the first 5 are kept
+        return updatedImages.slice(0, 8);
       });
     }
   };
