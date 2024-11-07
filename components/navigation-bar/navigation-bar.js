@@ -11,6 +11,7 @@ export default function NavigationBar() {
         <section className={classes.logoWrapper}>
           <Link href="/">
             <Image
+              priority
               width={100}
               height={30}
               src={logo.src}

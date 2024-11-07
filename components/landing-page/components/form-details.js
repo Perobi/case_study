@@ -68,7 +68,7 @@ export default function FormDetails({
             >
               <AutoCompleteInput
                 key={field}
-                value={value}
+                value={value || ""}
                 onChange={(newValue) => handleInputChange(field, newValue)}
               />
               {loadingFetchDetails && (

@@ -3,13 +3,18 @@ import classes from "./autocomplete-input.module.css";
 
 const API_URL = "/api/autocomplete";
 
-export default function AutoCompleteInput({ value, onChange }) {
+export default function AutoCompleteInput({ value = "", onChange }) {
   const wrapperRef = useRef(null);
   const [addressAutoCompleteResults, setAddressAutoCompleteResults] = useState(
     []
   );
   const [isUserInteracting, setIsUserInteracting] = useState(false);
-  const [inputValue, setInputValue] = useState(value); // Internal state to manage user input
+  const [inputValue, setInputValue] = useState(value ?? ""); // Use nullish coalescing to default to an empty string
+
+  useEffect(() => {
+    // If the parent component updates the value prop, update the internal state
+    setInputValue(value);
+  }, [value]);
 
   const fetchAutocompleteResults = async (query) => {
     if (!query) return;

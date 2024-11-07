@@ -16,7 +16,7 @@ const uploadFileToTemporaryService = async (file) => {
   // Introduce a delay to avoid hitting the rate limit
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  await delay(500); // bei 500 scheint es gut zu funktionieren
+  await delay(100); // bei 500 scheint es gut zu funktionieren
 
   const response = await fetch(url, {
     method: "POST",

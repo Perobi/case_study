@@ -44,18 +44,19 @@ export default function UploadSection() {
     setLoadingFetchDetails(false);
   };
 
+  // make sure fetch request only runs once
   useEffect(() => {
     if (typeof window !== "undefined") {
       const emailParam = new URLSearchParams(window.location.search).get(
         "email"
       );
       if (emailParam) {
-        setEmail(emailParam); // Set the email in state
+        setEmail(emailParam);
       } else {
         setLoadingFetchDetails(false);
       }
     }
-  }, []); // Empty dependency array means it runs once on mount
+  }, []);
 
   // Fetch user details when `email` changes
   useEffect(() => {
@@ -93,7 +94,7 @@ export default function UploadSection() {
       return;
     }
 
-    // Compression of images
+    // Compression of images with dependency
     const options = {
       maxSizeMB: 1,
       maxWidthOrHeight: 800,
